@@ -72,7 +72,7 @@ const login = (event) => {
     }).then(() => {
         return axios.get(SEREVER + "/check-admin", {
             params: {
-                "user_name": user_name
+                "name": user_name
             },
             withCredentials: true
         });
@@ -82,7 +82,7 @@ const login = (event) => {
         } else {
             window.location.href = "books.html";
         }
-    })
+    }).catch((err))
 }
 
 const register = (event) => {
