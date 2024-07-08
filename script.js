@@ -82,7 +82,7 @@ const login = (event) => {
         } else {
             window.location.href = "books.html";
         }
-    }).catch((err))
+    })
 }
 
 const register = (event) => {
