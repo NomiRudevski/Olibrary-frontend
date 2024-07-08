@@ -71,9 +71,6 @@ const login = (event) => {
         withCredentials: true
     }).then(() => {
         return axios.get(SEREVER + "/check-admin", {
-            params: {
-                "name": user_name
-            },
             withCredentials: true
         });
     }).then((res) => {
