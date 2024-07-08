@@ -113,7 +113,7 @@ const getAllBooks = () => {
         .then((res) => {
             books = res.data
             const bookList = books.map(book => `<div class="book-card-container" onclick = "openBookMoadl(${book.book_id})">
-                                                    <div><img src = "${SEREVER}/images/${book.image_file_name}" class ="book-image-list"></div>
+                                                    <div><img src = "${SEREVER}/static/images/${book.image_file_name}" class ="book-image-list"></div>
                                                     <div class="card-main-text"> ${book.title} </div>
                                                     <div> ${book.author} </div>
                                                 </div>`).join("");
@@ -126,7 +126,7 @@ const openBookMoadl = (id) => {
         .then((res) => {
             book = res.data
             console.log(book)
-            document.getElementById("imageCard").innerHTML = `<img src = "${SEREVER}/images/${book.image_file_name}" class="image-card">`
+            document.getElementById("imageCard").innerHTML = `<img src = "${SEREVER}/static/images/${book.image_file_name}" class="image-card">`
             document.getElementById("bookTitle").innerHTML = `${book.title}`
             document.getElementById("bookAuthor").innerHTML = `${book.author}`
             document.getElementById("bookCategory").innerHTML = `${book.category}`
@@ -217,7 +217,7 @@ const searchBooks = () => {
                 const books = response.data;
                 const bookList = books.map(book =>
                     `<div class="book-card-container">
-                    <div><img src="${SEREVER}/images/${book.image_file_name}" class="book-image-list"></div>
+                    <div><img src="${SEREVER}/static/images/${book.image_file_name}" class="book-image-list"></div>
                     <div class="card-main-text">${book.title}</div>
                 </div>`).join("");
                 document.getElementById("bookList").innerHTML = bookList;
@@ -473,7 +473,7 @@ const userLateLoans = () => {
         .then((res) => {
             books = res.data
             const bookList = books.map(book => `<div class="book-card-container" onclick = "openBookMoadl(${book.book_id})">
-                                                    <div><img src = "${SEREVER}/images/${book.image_file_name}" class ="book-image-list"></div>
+                                                    <div><img src = "${SEREVER}/static/images/${book.image_file_name}" class ="book-image-list"></div>
                                                     <div class="card-main-text"> ${book.title} </div>
                                                     <div> ${book.author} </div>
                                                 </div>`).join("");
@@ -488,7 +488,7 @@ const getAllLoans = () => {
             const books = res.data;
             const bookList = books.map(book => `
                 <div class="book-card-container">
-                    <div><img src="${SEREVER}/images/${book.image_file_name}" class="book-image-list" alt="${book.title}"></div>
+                    <div><img src="${SEREVER}/static/images/${book.image_file_name}" class="book-image-list" alt="${book.title}"></div>
                     <div class="card-main-text">${book.title}</div>
                     <div>${book.author}</div>
                     ${book.is_late ? `<button class="b-default late-return-button" onclick="returnUserBook(${book.loan_id})">Late - Return Book</button>` : `<button class="b-default" onclick="returnUserBook(${book.loan_id})">Return Book</button>`}
